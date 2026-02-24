@@ -1,27 +1,8 @@
-import { useEffect, useRef } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
+import FadeInReveal from './FadeInReveal'
 
 export default function Facilities() {
-  const sectionRef = useRef(null)
   const { language } = useLanguage()
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    const tiles = sectionRef.current?.querySelectorAll('.facility-tile')
-    tiles?.forEach((tile) => observer.observe(tile))
-
-    return () => observer.disconnect()
-  }, [])
 
   const facilities = language === 'es' 
     ? [
@@ -93,32 +74,33 @@ export default function Facilities() {
     switch (icon) {
       case 'book':
         return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
           </svg>
         )
       case 'play':
         return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         )
       case 'sun':
         return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
         )
       case 'paint':
         return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M7.25 12a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm-3-6a.75.75 0 000 1.5h14.5a.75.75 0 000-1.5H4.25zM4.25 16.5a.75.75 0 01.75-.75h13.5a.75.75 0 010 1.5H5a.75.75 0 01-.75-.75z"/>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
           </svg>
         )
       case 'home':
         return (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"/>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
           </svg>
         )
       default:
@@ -126,55 +108,60 @@ export default function Facilities() {
     }
   }
 
-  const title = language === 'es' ? 'Espacios diseñados para aprender' : 'Spaces designed to learn'
+  const title = language === 'es' ? 'Espacios diseñados para aprender y crecer' : 'Spaces designed to learn and grow'
 
   return (
     <section 
       id="instalaciones" 
-      className="section-padding bg-white"
-      ref={sectionRef}
+      className="section-padding bg-white relative"
     >
-      <div className="container-main">
+      <div className="container-main relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16 reveal">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-heading">
+        <FadeInReveal className="text-center mb-16 md:mb-20">
+          <p className="font-body text-sm uppercase tracking-widest text-primary font-bold mb-4">
+            {language === 'es' ? 'NUESTRAS INSTALACIONES' : 'OUR FACILITIES'}
+          </p>
+          <h2 className="font-heading font-extrabold text-3xl md:text-4xl lg:text-5xl text-heading max-w-3xl mx-auto leading-tight">
             {title}
           </h2>
-        </div>
+        </FadeInReveal>
 
         {/* Facilities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {facilities.map((facility, index) => (
-            <div
-              key={facility.title + index}
-              className="facility-tile relative aspect-[4/3] rounded-2xl overflow-hidden reveal group"
-              style={{ transitionDelay: `${index * 100}ms` }}
+            <FadeInReveal 
+              key={facility.title + index} 
+              delay={index * 0.1}
             >
-              {/* Image */}
-              <img
-                src={facility.image}
-                alt={facility.title}
-                className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-103"
-                loading="lazy"
-              />
+              <div
+                className="group relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer border border-transparent hover:border-white/20"
+              >
+                {/* Image */}
+                <img
+                  src={facility.image}
+                  alt={facility.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
 
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-heading/60 via-transparent to-transparent" />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-500" />
 
-              {/* Badge Icon */}
-              <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                <span className="text-heading">
+                {/* Badge Icon */}
+                <div className="absolute top-5 right-5 w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:bg-primary group-hover:border-primary transition-all duration-300 transform group-hover:-translate-y-1">
                   {renderBadgeIcon(facility.icon)}
-                </span>
-              </div>
+                </div>
 
-              {/* Title */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="font-heading font-semibold text-lg text-white">
-                  {facility.title}
-                </h3>
+                {/* Title */}
+                <div className="absolute bottom-6 left-6 right-6 transform transition-transform duration-500 group-hover:-translate-y-2">
+                  <h3 className="font-heading font-bold text-2xl text-white drop-shadow-md mb-2">
+                    {facility.title}
+                  </h3>
+                  <div className="w-12 h-1 bg-secondary rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                </div>
               </div>
-            </div>
+            </FadeInReveal>
           ))}
         </div>
       </div>

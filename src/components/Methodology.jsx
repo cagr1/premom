@@ -1,27 +1,8 @@
-import { useEffect, useRef } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
+import FadeInReveal from './FadeInReveal'
 
 export default function Methodology() {
-  const sectionRef = useRef(null)
   const { language } = useLanguage()
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    const cards = sectionRef.current?.querySelectorAll('.methodology-card')
-    cards?.forEach((card) => observer.observe(card))
-
-    return () => observer.disconnect()
-  }, [])
 
   const cards = language === 'es' ? [
     {
@@ -66,55 +47,63 @@ export default function Methodology() {
   return (
     <section 
       id="metodologia" 
-      className="section-padding bg-bg-section"
-      ref={sectionRef}
+      className="section-padding bg-bg-section relative overflow-hidden"
     >
-      <div className="container-main">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      
+      <div className="container-main relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16 reveal">
-          <p className="font-body text-xs uppercase tracking-widest text-primary font-semibold mb-4">
+        <FadeInReveal className="text-center mb-16 md:mb-20">
+          <p className="font-body text-xs md:text-sm uppercase tracking-widest text-primary font-bold mb-4">
             {language === 'es' ? 'NUESTRA METODOLOGÍA' : 'OUR METHODOLOGY'}
           </p>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-heading">
+          <h2 className="font-heading font-extrabold text-3xl md:text-4xl lg:text-5xl text-heading max-w-3xl mx-auto leading-tight">
             {language === 'es' ? 'Aprendemos jugando, crecemos con valores' : 'We learn through play, we grow with values'}
           </h2>
-        </div>
+        </FadeInReveal>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {cards.map((card, index) => (
-            <div
-              key={card.title}
-              className="methodology-card bg-white rounded-2xl p-8 md:p-10 card-hover reveal"
-              style={{ transitionDelay: `${index * 150}ms` }}
+            <FadeInReveal 
+              key={card.title} 
+              delay={index * 0.15}
+              className="h-full"
             >
-              {/* Icon */}
-              <div className="mb-6 flex justify-center">
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className="w-[120px] h-[120px] icon-3d object-contain"
-                  loading="lazy"
-                />
+              <div
+                className="group h-full bg-white rounded-3xl p-8 md:p-10 card-hover shadow-sm border border-gray-100 flex flex-col items-center relative overflow-hidden hover:border-primary/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(50,170,158,0.08)]"
+              >
+                {/* Background Accent */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+
+                {/* Icon */}
+                <div className="mb-8 flex justify-center relative z-10">
+                  <img
+                    src={card.icon}
+                    alt={card.title}
+                    className="w-[110px] h-[110px] md:w-[130px] md:h-[130px] icon-3d object-contain group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Title */}
+                <h3 className="font-heading font-bold text-xl md:text-2xl text-heading text-center mb-4 relative z-10">
+                  {card.title}
+                </h3>
+
+                {/* Description */}
+                <p className="font-body text-text/80 text-center mb-8 flex-grow relative z-10 leading-relaxed max-w-sm">
+                  {card.description}
+                </p>
+
+                {/* Tag */}
+                <div className="flex justify-center w-full mt-auto relative z-10">
+                  <span className="px-5 py-2.5 bg-gray-50 text-text rounded-xl text-sm font-semibold tracking-wide border border-gray-100 group-hover:bg-primary-soft group-hover:text-primary group-hover:border-primary/20 transition-colors w-full text-center">
+                    {card.tag}
+                  </span>
+                </div>
               </div>
-
-              {/* Title */}
-              <h3 className="font-heading font-semibold text-xl text-heading text-center mb-4">
-                {card.title}
-              </h3>
-
-              {/* Description */}
-              <p className="font-body text-text text-center mb-6">
-                {card.description}
-              </p>
-
-              {/* Tag */}
-              <div className="flex justify-center">
-                <span className="px-4 py-2 bg-primary-soft text-primary rounded-full text-xs font-semibold uppercase tracking-wide">
-                  {card.tag}
-                </span>
-              </div>
-            </div>
+            </FadeInReveal>
           ))}
         </div>
       </div>

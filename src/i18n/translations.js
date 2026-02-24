@@ -14,7 +14,7 @@ export const translations = {
     hero: {
       location: 'MACHALA · ECUADOR',
       title: 'Educación inicial',
-      withLove: 'con',
+      withLove: 'con amor ',
       andExcellence: 'y excelencia',
       subtitle: 'Formamos niños felices y seguros desde los primeros años, con metodología activa y atención personalizada.',
       ctaPrimary: 'Solicitar información',
@@ -118,7 +118,7 @@ export const translations = {
     hero: {
       location: 'MACHALA · ECUADOR',
       title: 'Early Childhood Education',
-      withLove: 'with',
+      withLove: 'with love',
       andExcellence: 'and excellence',
       subtitle: 'We form happy and safe children from the earliest years, with an active methodology and personalized attention.',
       ctaPrimary: 'Request Info',
