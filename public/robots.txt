@@ -1,0 +1,45 @@
+# Robots.txt para Preciosos Momentos
+# https://preciososmomentos.edu.ec
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://preciososmomentos.edu.ec/sitemap.xml
+
+# Archivos disallowed (si hay)
+Disallow: /src/
+Disallow: /components/
+
+# Metadatos adicionales
+Host: https://preciososmomentos.edu.ec
+
+# Para motores de búsqueda específicos
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Slurp
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: Baiduspider
+Allow: /
+User-agent: YandexBot
+Allow: /
+
+# Para IA y chatbots
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bing-Extended
+Allow: /
