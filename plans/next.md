@@ -1,196 +1,92 @@
 # Próximos Pasos
 
-## FASE 1: Preparación
+## FASE 1: Testing y QA (Inmediato)
 
-### 1. Configurar Proyecto React
-- [ ] Inicializar proyecto con Vite
-- [ ] Instalar Tailwind CSS
-- [ ] Configurar Google Fonts (Poppins + Inter)
-- [ ] Crear estructura de carpetas `/src/components`
+### Testing del Sistema Bilingüe
+- [ ] Verificar que todas las secciones cambien correctamente al idioma inglés
+- [ ] Verificar que el toggle de idioma funcione correctamente
+- [ ] Probar en diferentes tamaños de pantalla
+- [ ] Verificar que no haya errores en consola
 
-### 2. Preparar Assets
-- [ ] Crear `public/isometric/` para iconos 3D (.PNG)
-- [ ] Crear `public/facilities/` para fotografías
-- [ ] Agregar iconos .PNG:
-  - Hero (160px): `hero-1.png`, `hero-2.png`
-  - Metodología (120px): `book.png`, `heart.png`, `star.png`
-  - Admisión (120px): `contact.png`, `visit.png`, `enroll.png`
-- [ ] Agregar fotografías:
-  - Hero: niño/niños en clase (WebP/JPEG)
-  - Facilities: 6 fotos de espacios reales (WebP/JPEG)
+### Performance
+- [ ] Medir tiempo de carga inicial
+- [ ] Verificar lazy loading de imágenes
+- [ ] Optimizar si es necesario
 
 ---
 
-## FASE 2: Componentes
+## FASE 2: Contenido Adicional
 
-### Estructura de Componentes
-```
-/src/components
-├── Navbar.jsx      # Sticky nav con blur on scroll
-├── Hero.jsx        # Left: H1+subtext+CTA | Right: Image + 2 floating icons
-├── Methodology.jsx # 3 cards con iconos 120px
-├── Facilities.jsx  # 6 fotos reales (NO SVGs)
-├── Admissions.jsx  # 3 pasos proceso
-├── Testimonials.jsx # 3 testimonios familias
-├── CTASection.jsx  # CTA final
-└── Footer.jsx      # 4 columnas
-```
+### Imágenes Reales
+- [ ] Agregar fotografías reales para Facilities (6 fotos)
+- [ ] Agregar fotografía real para Hero
+- [ ] Optimizar todas las imágenes (WebP)
+- [ ] Agregar lazy loading donde falte
+
+### Contenido
+- [ ] Agregar más testimonios de padres
+- [ ] Crear página de "Sobre Nosotros" más completa
+- [ ] Agregar información de contacto detallada
 
 ---
 
-## FASE 3: Implementación por Componente
+## FASE 3: Funcionalidades
 
-### Step 1: Configuración Global
-- [ ] App.jsx - estructura principal
-- [ ] index.css - variables CSS, tipografía, animaciones base
-- [ ] Navbar.jsx - con scroll listener
+### Formulario de Contacto
+- [ ] Crear componente de formulario
+- [ ] Integrar con servicio de email o backend
+- [ ] Validación de campos
+- [ ] Mensajes de éxito/error
 
-### Step 2: Hero Section (LAYOUT CLAVE)
-
-**Container:**
-```html
-<!-- Mobile: 90% width -->
-<!-- Desktop: max-w-[1200px] mx-auto px-6 md:px-8 -->
-<div class="max-w-[1200px] mx-auto px-6 md:px-8">
-```
-
-**Grid:**
-```html
-<!-- Mobile: grid-cols-1 -->
-<!-- Desktop: md:grid-cols-2 -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-```
-
-**Left (55%):**
-```html
-<div class="order-2 md:order-1">
-  <!-- Eyebrow -->
-  <!-- H1 con "amor" en #F5C758 -->
-  <!-- Subtext -->
-  <!-- CTA buttons -->
-  <!-- Trust row -->
-</div>
-```
-
-**Right (45%):**
-```html
-<div class="order-1 md:order-2 relative">
-  <!-- Hero image -->
-  <img 
-    src="/hero-children.jpg" 
-    alt="Niños en clase"
-    class="max-h-[520px] w-full object-cover rounded-2xl"
-  />
-  <!-- Floating icons (position absolute) -->
-  <img class="absolute floating-icon-1" src="/isometric/hero-1.png" />
-  <img class="absolute floating-icon-2" src="/isometric/hero-2.png" />
-</div>
-```
-
-**Mobile order:** Text (order-2) → Image (order-1)  
-**Desktop order:** Text (order-1) → Image (order-2)
-
-- [ ] Implementar grid responsive 1fr → 2fr
-- [ ] Left: H1 + subtext + botones + trust row
-- [ ] Right: Hero image + 2 iconos 3D flotando (position absolute)
-- [ ] Animación float: `float 4s ease-in-out infinite`
-- [ ] "amor" en H1 con color #F5C758
-- [ ] Iconos con sombra: `drop-shadow(0 10px 20px rgba(0,0,0,0.08))`
-- [ ] Imagen: max-h-[520px], rounded-2xl, object-cover
-
-### Step 3: Metodología
-- [ ] Grid de 3 tarjetas
-- [ ] Iconos 3D de 120px cada uno (book, heart, star)
-- [ ] Effect hover lift (4-6px)
-
-### Step 4: Instalaciones (CRÍTICO)
-- [ ] **6 fotografías reales** - esta sección vende
-- [ ] Grid: 3 columnas desktop, 2 mobile, 1 small mobile
-- [ ] Formato: Card con imagen + título
-- [ ] Imagen: aspect-[4/3], rounded-xl, object-cover
-- [ ] NO usar SVGs placeholder
-
-### Step 5: Admisión
-- [ ] Proceso de 3 pasos horizontales
-- [ ] Iconos 3D de 120px (contact, visit, enroll)
-- [ ] Connector lines entre pasos
-
-### Step 6: Testimonios
-- [ ] 3 tarjetas
-- [ ] Línea de acento amarillo (#F5C758)
-- [ ] Avatar con iniciales
-
-### Step 7: CTA Final
-- [ ] Background pattern sutil
-- [ ] Botón prominence
-
-### Step 8: Footer
-- [ ] 4 columnas desktop
-- [ ] Stacked mobile
-- [ ] Dark theme (#0F172A)
+### Navegación
+- [ ] Smooth scroll para todos los enlaces
+- [ ] Highlight de sección activa en navbar
+- [ ] Botón "Volver arriba"
 
 ---
 
-## FASE 4: Espaciado y Responsive
+## FASE 4: SEO y Metadata
 
-### Container (todas las secciones)
-```css
-/* Base */
-max-width: 1200px;
-margin: 0 auto;
+### Meta Tags
+- [ ] Open Graph tags
+- [ ] Twitter Card tags
+- [ ] Favicon (ya configurado con logo1.png)
+- [ ] Descripciones para cada sección
 
-/* Desktop */
-padding: 0 32px;  /* px-8 */
-
-/* Mobile */
-padding: 0 24px;  /* px-6 */
-width: 90%;
-```
-
-### Vertical Spacing
-```css
-/* Desktop */
-padding-top: 80px;    /* py-20 */
-padding-bottom: 80px; /* py-20 */
-
-/* Mobile */
-padding-top: 56px;    /* py-14 */
-padding-bottom: 56px; /* py-14 */
-```
-
-### Grid Gaps
-```css
-gap: 32px;  /* gap-8 - mínimo */
-gap: 48px;  /* gap-12 - ideal */
-```
+### SEO
+- [ ] Semantic HTML
+- [ ] Heading hierarchy
+- [ ] Alt texts en todas las imágenes
 
 ---
 
-## FASE 5: Animaciones (Motion System)
+## FASE 5: Despliegue
 
-### AnimSaciones sutiles:
-- [ ] Fade-in on scroll (IntersectionObserver)
-- [ ] Icon hover lift (4-6px)
-- [ ] Card hover elevation
-- [ ] Smooth navbar transition
-- [ ] Float para iconos 3D en Hero (4s infinite)
+### Hosting
+- [ ] Configurar Vercel o Netlify
+- [ ] Configurar CI/CD automático
+- [ ] Dominio personalizado (opcional)
 
-### Evitar:
-- ❌ Animaciones flashy
-- ❌ Motion pesado
-- ❌ Parallax abuse
+### Production Build
+- [ ] Optimizar bundle size
+- [ ] Habilitar compression
+- [ ] Cache headers
 
 ---
 
-## FASE 6: Git y Despliegue
-- [ ] Inicializar Git
-- [ ] Primer commit
-- [ ] Push a GitHub
-- [ ] Configurar hosting (Vercel/Netlify/GitHub Pages)
+## FASE 6: Analytics y Medición
+
+### Básico
+- [ ] Google Analytics básico
+- [ ] Pixel de Facebook (opcional)
+
+### Monitoreo
+- [ ] Uptime monitoring
+- [ ] Error tracking
 
 ---
 
-## Quality Gates
+## Checklist de Qualidade
 
 ### Layout
 - [ ] Container: max-w-[1200px] mx-auto px-6 md:px-8
@@ -214,13 +110,19 @@ gap: 48px;  /* gap-12 - ideal */
 
 ### Navbar
 - [ ] Navbar: transparent → white blur
+- [ ] Toggle de idioma funcional
+
+### Bilingüe
+- [ ] Toggle con banderas 🇪🇸/🇺🇸
+- [ ] Todas las secciones traducidas
+- [ ] Contenido consistente en ambos idiomas
 
 ### Iconos
 - [ ] Iconos flotando en Hero (position absolute)
 - [ ] Cards con hover lift (4-6px)
-- [ ] **Facilities con FOTOS REALES** (no SVGs)
-- [ ] Iconos .PNG (no SVG)
-- [ ] Sombra iconos: `drop-shadow(0 10px 20px rgba(0,0,0,0.08))`
+- [ ] Facilities con FOTOS REALES
+- [ ] Iconos .PNG
+- [ ] Sombra iconos: drop-shadow(0 10px 20px rgba(0,0,0,0.08))
 
 ### Estilo
 - [ ] Testimonios con línea acento amarillo
@@ -228,23 +130,19 @@ gap: 48px;  /* gap-12 - ideal */
 - [ ] Footer 4 columnas / stacked mobile
 
 ### Performance
-- [ ] IntersectionObserver para reveals
+- [ ] Lazy loading en todas las imágenes
 - [ ] Responsive breakpoints
 - [ ] Animaciones sutiles (no flashy)
 
 ---
 
-## Breakpoints
-
-| Breakpoint | Ancho | px- | py- |
-|------------|-------|-----|-----|
-| Mobile | < 640px | px-6 | py-14 |
-| Tablet | 640-1024px | px-6 | py-14 |
-| Desktop | > 1024px | px-8 | py-20 |
-
----
-
 ## Notas Importantes
+
+### Sistema Bilingüe Implementado
+- Idioma principal: Español (ES)
+- Idioma secundario: Inglés (EN)
+- Toggle en Navbar con banderas
+- 8 secciones completamente traducidas
 
 ### Iconos 3D - Reglas de Consistencia
 - Misma perspectiva (~30°)

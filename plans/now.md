@@ -4,32 +4,50 @@
 
 ### Repositorio
 - **URL:** https://github.com/cagr1/premom.git
-- **Estado:** Vacío (recién creado)
-- **Rama principal:** main (por defecto)
+- **Estado:** ✓ Primer commit realizado
+- **Rama principal:** master
 
 ### Estado del Código
-- **Archivos:** 0
-- **Commits:** 0
+- **Archivos:** 31 archivos
+- **Commits:** 1 (Initial commit: Add bilingual support (ES/EN) and performance optimizations)
 
 ### Documentación
 - [x] `plans/project.md` - Definición del proyecto ✓
-- [x] `plans/now.md` - Este archivo
-- [x] `plans/next.md` - Próximos pasos
+- [x] `plans/now.md` - Este archivo ✓
+- [x] `plans/next.md` - Próximos pasos ✓
 
 ---
 
-## Lo que YA está definido
+## Lo que YA está implementado
 
 | Aspecto | Estado |
 |---------|--------|
 | Nombre institución | ✓ Definido |
 | Colores (CSS variables) | ✓ Especificados |
 | Tipografía (Poppins + Inter) | ✓ Elegida |
-| Estructura de 8 secciones | ✓ Diseñada |
+| Estructura de 8 secciones | ✓ Implementada |
 | Iconos 3D (.PNG) | ✓ En `public/isometric/` |
 | Layout Hero | ✓ Left 55% / Right 45% |
 | Responsive | ✓ Desktop/mobile definidos |
 | Stack técnico | ✓ React + Vite + Tailwind |
+| Sistema bilingüe ES/EN | ✓ Implementado |
+| Toggle de idioma | ✓ Con banderas 🇪🇸/🇺🇸 |
+| Git + GitHub | ✓ Configurado |
+
+---
+
+## Componentes Implementados
+
+| Componente | Estado |
+|------------|--------|
+| Navbar | ✓ Con toggle de idioma |
+| Hero | ✓ Bilingüe |
+| Methodology | ✓ Bilingüe |
+| Facilities | ✓ Bilingüe |
+| Admissions | ✓ Bilingüe |
+| Testimonials | ✓ Bilingüe |
+| CTASection | ✓ Bilingüe |
+| Footer | ✓ Bilingüe |
 
 ---
 
@@ -79,97 +97,58 @@ Image (abajo)
 ### Facilities
 - aspect-ratio: 4/3
 - rounded-xl
+- Lazy loading implementado
 
 ---
 
-## Nueva Estructura de Proyecto
+## Estructura de Proyecto
 
 ```
 /premom
 ├── public/
-│   └── isometric/      ← Iconos 3D (SOLO .PNG)
-│       ├── hero-1.png    (160px)
-│       ├── hero-2.png    (160px)
-│       ├── book.png      (120px)
-│       ├── heart.png     (120px)
-│       ├── star.png      (120px)
-│       ├── contact.png   (120px)
-│       ├── visit.png     (120px)
-│       └── enroll.png    (120px)
+│   ├── isometric/      ← Iconos 3D (.PNG)
+│   │   ├── backpack-icon.png
+│   │   ├── book-icon.png
+│   │   ├── globe-icon.png
+│   │   ├── microscope-icon.png
+│   │   ├── ruler-icon.png
+│   │   └── student-icon.png
+│   ├── logo.png
+│   └── logo1.png
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx      ← Layout: left H1+subtext+CTA, right hero image + 2 floating icons
-│   │   ├── Methodology.jsx
-│   │   ├── Facilities.jsx   ← Fotos reales (NO SVGs)
-│   │   ├── Admissions.jsx
-│   │   ├── Testimonials.jsx
-│   │   ├── CTASection.jsx
-│   │   └── Footer.jsx
+│   │   ├── Navbar.jsx       ← Con toggle ES/EN
+│   │   ├── Hero.jsx         ← Bilingüe
+│   │   ├── Methodology.jsx  ← Bilingüe
+│   │   ├── Facilities.jsx   ← Bilingüe
+│   │   ├── Admissions.jsx  ← Bilingüe
+│   │   ├── Testimonials.jsx ← Bilingüe
+│   │   ├── CTASection.jsx  ← Bilingüe
+│   │   └── Footer.jsx      ← Bilingüe
+│   ├── i18n/
+│   │   ├── translations.js  ← ES/EN
+│   │   └── LanguageContext.jsx
 │   ├── App.jsx
-│   ├── index.jsx
+│   ├── main.jsx
 │   └── index.css
-├── index.html
-└── package.json
+├── index.html                 ← Favicon: logo1.png
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+└── postcss.config.js
 ```
 
 ---
 
-## Reglas de Consistencia Iconos 3D
+## Lo que FALTA por hacer (Próxima fase)
 
-### Deben tener todos:
-- ✅ Misma perspectiva (~30°)
-- ✅ Mismo estilo de iluminación
-- ✅ Fondo transparente
-- ✅ Proporciones similares
-- ✅ Tamaño visual consistente
-- ✅ Formato: **.PNG**
-
-### Evitar:
-- ❌ Mezclar estilos
-- ❌ Iconos muy detallados + minimalistas
-- ❌ Colores saturados
-
----
-
-## Assets Necesarios
-
-### Iconos 3D (public/isometric/) - SOLO .PNG
-- [ ] `hero-1.png` - Elemento decorativo (160px)
-- [ ] `hero-2.png` - Elemento decorativo (160px)
-- [ ] `book.png` - Aprendizaje lúdico (120px)
-- [ ] `heart.png` - Atención personalizada (120px)
-- [ ] `star.png` - Valores y disciplina (120px)
-- [ ] `contact.png` - Contacto (120px)
-- [ ] `visit.png` - Visita (120px)
-- [ ] `enroll.png` - Inscripción (120px)
-
-### Fotografías Reales
-- [ ] Hero: niño/niños en clase (WebP/JPEG)
-- [ ] Facilities: 6 fotos de espacios reales (WebP/JPEG)
-
-### Estilo de sombra para todos los iconos
-```css
-filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08));
-```
-
----
-
-## Lo que FALTA por hacer
-
-- [ ] Configurar proyecto React con Vite
-- [ ] Crear estructura de carpetas
-- [ ] Agregar iconos .PNG en public/isometric/
-- [ ] Agregar fotografías en public/
-- [ ] Implementar Navbar con scroll effect
-- [ ] Implementar Hero (left 55% / right 45%)
-- [ ] Implementar sección Metodología
-- [ ] Implementar sección Instalaciones con FOTOS REALES
-- [ ] Implementar proceso de Admisión
-- [ ] Implementar Testimonios
-- [ ] Implementar CTA Final
-- [ ] Implementar Footer
-- [ ] Configurar Git y primer commit
+- [ ] Testing completo del sistema bilingüe
+- [ ] Agregar más contenido/images reales
+- [ ] SEO y meta tags
+- [ ] Despliegue a producción (Vercel/Netlify)
+- [ ] Optimizaciones adicionales de performance
+- [ ] Formulario de contacto funcional
+- [ ] Analytics básico
 
 ---
 
