@@ -47,7 +47,8 @@ export default function Methodology() {
   return (
     <section 
       id="metodologia" 
-      className="section-padding bg-bg-section relative overflow-hidden"
+      className="section-padding relative overflow-hidden"
+      style={{ backgroundColor: '#F9F8F6' }}
     >
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
       

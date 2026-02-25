@@ -65,10 +65,11 @@ export default function Testimonials() {
 
   return (
     <section 
-      className="section-padding bg-bg-section"
+      className="section-padding relative overflow-hidden"
+      style={{ backgroundColor: '#F9F8F6' }}
       ref={sectionRef}
     >
-      <div className="container-main">
+      <div className="container-main relative z-10">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 reveal">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-heading">

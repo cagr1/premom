@@ -36,21 +36,18 @@ export default function Hero() {
   }
 
   return (
-    <section className="pt-[72px] relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-primary-soft/50 z-0"></div>
-      
+    <section className="pt-[72px] relative overflow-hidden" style={{ backgroundColor: '#F9F8F6' }}>
       {/* Abstract blurred blobs */}
-      <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
-      <div className="absolute top-40 -right-20 w-96 h-96 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" style={{ animationDelay: '4s' }}></div>
+      <div className="absolute top-0 -left-20 w-80 h-80 md:w-96 md:h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+      <div className="absolute top-20 -right-20 w-72 h-72 md:w-96 md:h-96 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+      <div className="absolute -bottom-20 left-1/2 w-80 h-80 md:w-96 md:h-96 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
 
-      <div className="container-main py-20 md:py-32 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container-main py-12 md:py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           
           {/* Left Content */}
           <motion.div 
-            className="order-2 md:order-1"
+            className="order-2 md:order-1 text-center md:text-left"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -146,7 +143,7 @@ export default function Hero() {
               <motion.img
                 variants={floatingVariants}
                 animate="animate"
-                src="/isometric/book.png"
+                src="/isometric/blackboard-icon.png"
                 alt="Icono aprendizaje"
                 className="absolute -top-10 -left-10 w-32 md:w-40 xl:w-48 drop-shadow-2xl z-20"
                 style={{ filter: "drop-shadow(0px 25px 35px rgba(0,0,0,0.15))" }}
@@ -158,7 +155,7 @@ export default function Hero() {
               <motion.img
                 variants={floatingVariants}
                 animate="animate"
-                src="/isometric/heart.png"
+                src="/isometric/lightbulb-icon.png"
                 alt="Icono cuidado"
                 className="absolute -bottom-8 -right-8 w-28 md:w-36 xl:w-40 drop-shadow-2xl z-20"
                 style={{ filter: "drop-shadow(0px 25px 35px rgba(50,170,158,0.2))", animationDelay: "1s" }}

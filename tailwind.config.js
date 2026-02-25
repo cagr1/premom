@@ -7,18 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#32AA9E',
-        'primary-soft': '#E7F6F4',
-        secondary: '#F5C758',
-        'secondary-soft': '#FFF4D6',
-        accent: '#FF8A65',
+        primary: '#32AA9D',
+        'primary-soft': '#E8F5F3',
+        secondary: '#F4C756',
+        'secondary-soft': '#FEF6E3',
+        accent: '#DB5D8E',
+        'accent-soft': '#FDEEF3',
+        beige: '#F9F8F6',
         heading: '#0F172A',
         text: '#475569',
         'bg-section': '#F8FAFC',
       },
       fontFamily: {
-        heading: ['Poppins', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        heading: ['Nunito', 'sans-serif'],
+        body: ['Nunito', 'sans-serif'],
+        script: ['Great Vibes', 'cursive'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',

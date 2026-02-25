@@ -113,7 +113,8 @@ export default function Facilities() {
   return (
     <section 
       id="instalaciones" 
-      className="section-padding bg-white relative"
+      className="section-padding relative"
+      style={{ backgroundColor: '#F9F8F6' }}
     >
       <div className="container-main relative z-10">
         {/* Header */}

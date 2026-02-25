@@ -15,11 +15,11 @@ export default function Footer() {
           
           {/* Column 1 - Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4 text-center justify-center">
               <img
-                src="/logo.png"
+                src="/logo1.png"
                 alt="Preciosos Momentos"
-                className="w-25 h-25 rounded-full object-cover text-center"
+                className="h-20 w-auto text-center"
               />
               
             </div>

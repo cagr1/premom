@@ -20,7 +20,7 @@ export default function Admissions() {
         },
         {
           number: '03',
-          icon: '/isometric/ruler-icon.png',
+          icon: '/isometric/abacus-icon.png',
           title: 'Inscripción',
           description: 'Completa el proceso de matriculación y únete a nuestra familia educativa.',
         },
@@ -40,7 +40,7 @@ export default function Admissions() {
         },
         {
           number: '03',
-          icon: '/isometric/ruler-icon.png',
+          icon: '/isometric/abacus-icon.png',
           title: 'Enrollment',
           description: 'Complete the enrollment process and join our educational family.',
         },
@@ -54,7 +54,8 @@ export default function Admissions() {
   return (
     <section 
       id="admisiones" 
-      className="section-padding relative overflow-hidden bg-primary-soft/50"
+      className="section-padding relative overflow-hidden"
+      style={{ backgroundColor: '#F9F8F6' }}
     >
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
       

@@ -72,11 +72,13 @@
 ## Sistema de Colores (CSS Variables)
 ```css
 :root {
-  --primary:        #32AA9E;      /* Teal - principal */
-  --primary-soft:   #E7F6F4;      /* Teal claro - fondos */
-  --secondary:      #F5C758;      /* Amarillo dorado */
-  --secondary-soft: #FFF4D6;      /* Amarillo claro */
-  --accent:         #FF8A65;      /* Naranja - acentos menores */
+  --primary:        #32AA9D;      /* Verde Menta - principal */
+  --primary-soft:   #E8F5F3;      /* Verde Menta claro - fondos */
+  --secondary:      #F4C756;      /* Amarillo dorado */
+  --secondary-soft: #FEF6E3;      /* Amarillo dorado claro */
+  --accent:         #DB5D8E;      /* Rosa Dulce Recuerdo - acentos */
+  --accent-soft:    #FDEEF3;      /* Rosa claro */
+  --beige:          #F9F8F6;      /* Beige - fondo general */
   
   --heading:        #0F172A;      /* Azul oscuro - encabezados */
   --text:           #475569;      /* Gris - texto cuerpo */
@@ -86,8 +88,20 @@
 ```
 
 ### Sistema Tipográfico
-- **Encabezados:** Poppins (600/700) - amigable, moderno, educativo
-- **Cuerpo:** Inter (400/500) - legible, profesional
+- **Encabezados:** Nunito (600/700/800) - amigable, moderno, educativo
+- **Cuerpo:** Nunito (400/500) - legible, amigable
+- **Especial:** Great Vibes - para acentos calligráficos en palabras destacadas
+
+### Paleta de Colores
+| Color | Hex | Nombre | Uso |
+|-------|-----|--------|-----|
+| Primary | #32AA9D | Verde Menta | Botones, links principales |
+| Primary Soft | #E8F5F3 | Verde Menta Claro | Fondos de secciones |
+| Secondary | #F4C756 | Amarillo Dorado | Acentos, highlights |
+| Secondary Soft | #FEF6E3 | Amarillo Dorado Claro | Fondos sutiles |
+| Accent | #DB5D8E | Rosa Dulce Recuerdo | Botones CTA, acentos especiales |
+| Accent Soft | #FDEEF3 | Rosa Claro | Fondos de tarjetas |
+| Beige | #F9F8F6 | Beige | Fondo general de la página |
 
 ### Escala Tipográfica
 | Elemento | Tamaño | Peso | Línea |
